@@ -2,29 +2,12 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
 	"os"
 	"regexp"
 	"strings"
 
 	"github.com/pdfcrowd/pdfcrowd-go"
 )
-
-func convertFileToString(filepath string) string {
-	filePath := filepath // Replace with the path to your .txt file
-
-	// Read the file contents
-	content, err := ioutil.ReadFile(filePath)
-	if err != nil {
-		log.Fatal("Error reading file:", err)
-	}
-
-	// Convert the file contents to a string
-	text := string(content)
-
-	return text
-}
 
 func convertPdfToString(filePath string) string {
 	// create the API client instance
