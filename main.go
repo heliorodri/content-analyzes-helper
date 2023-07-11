@@ -7,9 +7,8 @@ import (
 	"os"
 )
 
-const API_KEY = "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"
-
 func main() {
+	apiKey := os.Getenv("AUTOMATE_CODE_API_KEY")
 	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Please, type the PDF name, with whole path, that will be used as dataset...\n")
@@ -23,7 +22,7 @@ func main() {
 	textDataset := convertPdfToString(file)
 
 	gptConfig := GptConfig{
-		client: *initClient(API_KEY),
+		client: *initClient(apiKey),
 		ctx:    context.Background(),
 	}
 
