@@ -20,4 +20,4 @@
 # Go workspace file
 go.work
 
-./content-analyzes-helper
+content-analyzes-helper
